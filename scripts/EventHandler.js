@@ -4,20 +4,17 @@ var displayEvent = document.getElementById("displayEvent");
 var userDisplay = document.getElementById("userDisplay");
 var passDisplay = document.getElementById("passDisplay");
 
-
-welcomeLabel.addEventListener("click", function(){
-    console.log("Event: click");
-    displayEvent.textContent="Event: clicked"
+welcomeLabel.addEventListener("dblclick", function () {
+    console.log("Event: dblclick");
+    displayEvent.textContent = "Event: dblclick";
 });
-
-welcomeLabel.addEventListener("mouseover", function(){
+welcomeLabel.addEventListener("mouseover", function () {
     console.log("Event: mouseover");
-    displayEvent.textContent="Event: Mouse Over"
+    displayEvent.textContent = "Event: mouseover";
 });
-
-welcomeLabel.addEventListener("mouseout", function(){
+welcomeLabel.addEventListener("mouseout", function () {
     console.log("Event: mouseout");
-    displayEvent.textContent="Event: Mouse Out"
+    displayEvent.textContent = "Event: mouseout";
 });
 
 function validateForm() {
