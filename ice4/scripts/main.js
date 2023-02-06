@@ -20,7 +20,10 @@
         let secondString = `${ firstString } main paragraph that we added through javascript and this is also on GitHub Pages`
         mainParagraph.textContent = secondString
 
-        mainContent.appendChild(mainParagraph) 
+        mainContent.appendChild(mainParagraph)
+        
+        let nguyen = new Contact("Nguyen Duc","2898302900","nguyen.duc@dcmail.ca")
+        console.log(nguyen.toString())
         
     }
     
@@ -33,6 +36,8 @@
                 break
         }
     }
+
+    
 
     window.addEventListener("load", Start)
 })()
