@@ -174,5 +174,48 @@
         }
     }
 
+    function testEmail(){
+        let messageArea = $("messageArea").hide()
+
+        let fullEmailPattern = /^([a-zA-Z0-9-.]+)@([a-zA-Z0-9-.]+).([a-zA-Z]{2,5})$/g
+        $('#emailAddress').on("blue", function(){
+            let fullEmailText=$(this).val()
+
+            if(!fullEmailPattern.test(fullEmailText)){
+                $(this).trigger("focus").trigger("select")
+
+                messageArea.addClass("alert alert-danger")
+                messageArea.text("Must enter a valid Email including @ and a . PLease.")
+                messageArea.show()
+
+            } else {
+                messageArea.removeAttr("Class")
+                messageArea.hide()
+            }
+        })
+
+
+    }
+    function testNumber(){
+        let messageArea = $("messageArea").hide()
+
+        let fullNumberPattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im
+        $('#contactNumber').on("blue", function(){
+            let fullNumberText=$(this).val()
+            if(!fullNumberPattern.test(fullNumberText)){
+                $(this).trigger("focus").trigger("select")
+                messageArea.addClass("alert alert-danger")
+                messageArea.text("Must enter a valid Number with no letter. Must be 10 digits")
+                messageArea.show()
+
+            } else {
+                messageArea.removeAttr("Class")
+                messageArea.hide()
+            }
+        })
+
+
+    }
+
     window.addEventListener("load", Start)
 })()
